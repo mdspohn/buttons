@@ -7,6 +7,12 @@
     <link rel="stylesheet" type="text/css" href="main.css" />
   </head>
   <body>
+    <div id="siarra-mode">
+            <span class="material-symbols-outlined">visibility</span>
+        <marquee>
+            <span>Siarra Mode</span>
+        </marquee>
+   </div>
     <section class="demo-columns">
         <section class="column">
             <h1>Courseware</h1>
@@ -26,8 +32,8 @@
         <section class="column">
             <h1>Standard</h1>
             <div class="btn blue standard">
-                <span class="material-symbols-outlined">search</span>
-                <span>Action</span>
+                <span class="material-symbols-outlined">apps</span>
+                <span>General</span>
             </div>
             <div class="btn green standard">
                 <span class="material-symbols-outlined">done</span>
@@ -41,31 +47,43 @@
         <section class="column">
             <h1>Flood</h1>
             <div class="btn blue flood">
-                <span class="material-symbols-outlined">search</span>
-                <span>Action</span>
+                <div class="absolute-wrapper">
+                    <span class="material-symbols-outlined">apps</span>
+                    <span>General</span>
+                </div>
             </div>
             <div class="btn green flood">
-                <span class="material-symbols-outlined">done</span>
-                <span>Confirm</span>
+                <div class="absolute-wrapper">
+                    <span class="material-symbols-outlined">done</span>
+                    <span>Confirm</span>
+                </div>
             </div>
             <div class="btn red flood">
-                <span class="material-symbols-outlined">close</span>
-                <span>Remove</span>
+                <div class="absolute-wrapper">
+                    <span class="material-symbols-outlined">close</span>
+                    <span>Remove</span>
+                </div>
             </div>
         </section>
         <section class="column">
             <h1>Wave</h1>
             <div class="btn blue wave">
-                <span class="material-symbols-outlined">search</span>
-                <span>Action</span>
+                <div class="absolute-wrapper">
+                    <span class="material-symbols-outlined">apps</span>
+                    <span>General</span>
+                </div>
             </div>
             <div class="btn green wave">
-                <span class="material-symbols-outlined">done</span>
-                <span>Confirm</span>
+                <div class="absolute-wrapper">
+                    <span class="material-symbols-outlined">done</span>
+                    <span>Confirm</span>
+                </div>
             </div>
             <div class="btn red wave">
-                <span class="material-symbols-outlined">close</span>
-                <span>Remove</span>
+                <div class="absolute-wrapper">
+                    <span class="material-symbols-outlined">close</span>
+                    <span>Remove</span>
+                </div>
             </div>
         </section>
     </section>
@@ -73,8 +91,8 @@
         <section class="column">
             <h1>Courseware</h1>
             <div class="btn blue courseware">
-                <span class="material-symbols-outlined">search</span>
-                <span>Action</span>
+                <span class="material-symbols-outlined">apps</span>
+                <span>General</span>
             </div>
             <div class="btn green courseware">
                 <span class="material-symbols-outlined">done</span>
@@ -88,8 +106,8 @@
         <section class="column">
             <h1>Standard</h1>
             <div class="btn blue standard">
-                <span class="material-symbols-outlined">search</span>
-                <span>Action</span>
+                <span class="material-symbols-outlined">apps</span>
+                <span>General</span>
             </div>
             <div class="btn green standard">
                 <span class="material-symbols-outlined">done</span>
@@ -103,31 +121,43 @@
         <section class="column">
             <h1>Flood</h1>
             <div class="btn blue flood">
-                <span class="material-symbols-outlined">search</span>
-                <span>Action</span>
+                <div class="absolute-wrapper">
+                    <span class="material-symbols-outlined">apps</span>
+                    <span>General</span>
+                </div>
             </div>
             <div class="btn green flood">
-                <span class="material-symbols-outlined">done</span>
-                <span>Confirm</span>
+                <div class="absolute-wrapper">
+                    <span class="material-symbols-outlined">done</span>
+                    <span>Confirm</span>
+                </div>
             </div>
             <div class="btn red flood">
-                <span class="material-symbols-outlined">close</span>
-                <span>Remove</span>
+                <div class="absolute-wrapper">
+                    <span class="material-symbols-outlined">close</span>
+                    <span>Remove</span>
+                </div>
             </div>
         </section>
         <section class="column">
             <h1>Wave</h1>
             <div class="btn blue wave">
-                <span class="material-symbols-outlined">search</span>
-                <span>Action</span>
+                <div class="absolute-wrapper">
+                    <span class="material-symbols-outlined">apps</span>
+                    <span>General</span>
+                </div>
             </div>
             <div class="btn green wave">
-                <span class="material-symbols-outlined">done</span>
-                <span>Confirm</span>
+                <div class="absolute-wrapper">
+                    <span class="material-symbols-outlined">done</span>
+                    <span>Confirm</span>
+                </div>
             </div>
             <div class="btn red wave">
-                <span class="material-symbols-outlined">close</span>
-                <span>Remove</span>
+                <div class="absolute-wrapper">
+                    <span class="material-symbols-outlined">close</span>
+                    <span>Remove</span>
+                </div>
             </div>
         </section>
     </section>
@@ -135,7 +165,15 @@
 
   <script type="text/javascript" src="buttons.js"></script>
   <script type="text/javascript">
+    document.getElementById('siarra-mode').addEventListener('click', () => {
+        if (!document.body.classList.contains('migraine-mode')) {
+            alert('OVERRIDE_SAFETY_PROTOCOL_WARNING')
+        }
+        document.body.classList.toggle('migraine-mode');
+    });
     Array.from(document.getElementsByClassName('courseware')).forEach(elem => new CoursewareButton(elem));
     Array.from(document.getElementsByClassName('standard')).forEach(elem => new StandardButton(elem));
+    Array.from(document.getElementsByClassName('flood')).forEach(elem => new FloodButton(elem));
+    Array.from(document.getElementsByClassName('wave')).forEach(elem => new WaveButton(elem));
   </script>
 </html>

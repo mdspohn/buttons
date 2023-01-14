@@ -30,6 +30,9 @@ body {
 	line-height: 1;
     background-color: rgb(238, 238, 238);
 }
+body.migraine-mode {
+    background-color: #fd00e8;
+}
 ol, ul {
 	list-style: none;
 }
@@ -62,7 +65,7 @@ table {
   font-family: 'Material Symbols Outlined';
   font-style: normal;
   font-weight: 100 700;
-  src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v75/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsI.woff2) format('woff2');
+  src: url('fonts/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsI.woff2') format('woff2');
 }
 
 .material-symbols-outlined {
@@ -90,12 +93,15 @@ table {
     --grey: #444444;
     --green: #218838;
     --light-green: #28aa44;
+    --lighter-green: #2ec04e;
     --red: #c82333;
     --light-red: #e4273a;
+    --lighter-red: #ff4154;
     --orange: #CF7B12;
     --blue: #034783;
     --dark-blue: #021E33;
     --light-blue: #015eaf;
+    --lighter-blue: #0272d4;
     --teal: #2edeeb;
 }
 
@@ -105,6 +111,24 @@ body {
     font-family: 'Montserrat';
     display: flex;
     flex-direction: column;
+}
+
+#siarra-mode {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 300ms ease-in-out, transform 300ms ease-in-out;
+}
+
+body:not(.migraine-mode) #siarra-mode:hover, body.migraine-mode #siarra-mode {
+    transform: rotate(5deg);
 }
 
 .demo-columns {
@@ -120,6 +144,10 @@ body {
 
 .demo-columns.dark {
     background-color: var(--dark-blue);
+}
+
+body.migraine-mode .demo-columns.dark {
+    background-color: #00fd15;
 }
 
 .demo-columns .column {
@@ -148,6 +176,7 @@ body {
 }
 
 .btn {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -186,42 +215,50 @@ body {
 // Courseware Button
 ---------------------- */
 
-.btn.courseware          { transition: 300ms border-color ease-in-out; }
+.btn.courseware { transition: 300ms border-color ease-in-out; }
+.btn.courseware .material-symbols-outlined { transition: 300ms color ease-in-out; }
 .btn.courseware:hover    { border-color: var(--teal); }
+.btn.courseware:hover .material-symbols-outlined {
+    color: var(--teal);
+}
 .btn.courseware.selected { border-color: var(--orange); }
+.btn.courseware.selected .material-symbols-outlined {
+    color: var(--orange);
+}
 
-/* ----------------
-// Standard Button
----------------------- */
-
-.btn.standard {
+.btn:not(.courseware) {
     transition: 300ms border-color ease-in-out,
                 300ms background-color ease-in-out,
                 300ms box-shadow ease-in-out,
                 300ms color ease-in-out;
 }
-.btn.standard.blue:hover:not(.selected) {
+.btn:not(.courseware).blue:hover:not(.selected) {
     box-shadow: 0 0 16px -8px black;
     background-color: var(--light-blue);
 }
-.btn.standard.green:hover:not(.selected) {
+.btn:not(.courseware).green:hover:not(.selected) {
     box-shadow: 0 0 16px -8px black;
     background-color: var(--light-green);
 }
-.btn.standard.red:hover:not(.selected) {
+.btn:not(.courseware).red:hover:not(.selected) {
     box-shadow: 0 0 16px -8px black;
     background-color: var(--light-red);
 }
 
-.dark .btn.standard.blue:hover:not(.selected) {
+/* ----------------
+// Standard Button
+---------------------- */
+
+.dark .btn:not(.courseware).blue:hover:not(.selected) {
     box-shadow: 0 0 16px -8px rgba(255,255,255,0.7);
 }
-.dark .btn.standard.green:hover:not(.selected) {
+.dark .btn:not(.courseware).green:hover:not(.selected) {
     box-shadow: 0 0 16px -8px rgba(255,255,255,0.7);
 }
-.dark .btn.standard.red:hover:not(.selected) {
+.dark .btn:not(.courseware).red:hover:not(.selected) {
     box-shadow: 0 0 16px -8px rgba(255,255,255,0.7);
 }
+
 .btn.standard.blue.selected {
     border-color: var(--blue) !important;
     background-color: var(--white) !important;
@@ -252,8 +289,39 @@ body {
 }
 
 /* ----------------
+// Fancy Animation General
+---------------------- */
+
+.absolute-wrapper {
+    position: absolute;
+    display: flex;
+    left: 0;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-sizing: border-box;
+    width: 200px;
+    padding-right: 20px;
+    height: 50px;
+    border-radius: 4px;
+}
+
+.btn-flood > div, .btn-flood > div > span {
+    pointer-events: none;
+}
+
+/* ----------------
 // Flood Button
 ---------------------- */
+
+.btn.flood {
+    border: 0;
+    box-sizing: content-box;
+    width: 180px !important;
+    height: 50px !important;
+    overflow: hidden;
+}
 
 
 /* ----------------
