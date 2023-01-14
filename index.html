@@ -10,61 +10,132 @@
     <section class="demo-columns">
         <section class="column">
             <h1>Courseware</h1>
-            <div class="btn blue original">Option</div>
-            <div class="btn green original">Confirm</div>
-            <div class="btn red original">Delete</div>
+            <div class="btn blue courseware">
+                <span class="material-symbols-outlined">apps</span>
+                <span>General</span>
+            </div>
+            <div class="btn green courseware">
+                <span class="material-symbols-outlined">done</span>
+                <span>Confirm</span>
+            </div>
+            <div class="btn red courseware">
+                <span class="material-symbols-outlined">close</span>
+                <span>Remove</span>
+            </div>
         </section>
         <section class="column">
-            <h1>Muted</h1>
-            <div class="btn blue"></div>
-            <div class="btn green"></div>
-            <div class="btn red"></div>
+            <h1>Standard</h1>
+            <div class="btn blue standard">
+                <span class="material-symbols-outlined">search</span>
+                <span>Action</span>
+            </div>
+            <div class="btn green standard">
+                <span class="material-symbols-outlined">done</span>
+                <span>Confirm</span>
+            </div>
+            <div class="btn red standard">
+                <span class="material-symbols-outlined">close</span>
+                <span>Remove</span>
+            </div>
         </section>
         <section class="column">
             <h1>Flood</h1>
-            <div class="btn blue"></div>
-            <div class="btn green"></div>
-            <div class="btn red"></div>
+            <div class="btn blue flood">
+                <span class="material-symbols-outlined">search</span>
+                <span>Action</span>
+            </div>
+            <div class="btn green flood">
+                <span class="material-symbols-outlined">done</span>
+                <span>Confirm</span>
+            </div>
+            <div class="btn red flood">
+                <span class="material-symbols-outlined">close</span>
+                <span>Remove</span>
+            </div>
         </section>
         <section class="column">
             <h1>Wave</h1>
-            <div class="btn blue"></div>
-            <div class="btn green"></div>
-            <div class="btn red"></div>
+            <div class="btn blue wave">
+                <span class="material-symbols-outlined">search</span>
+                <span>Action</span>
+            </div>
+            <div class="btn green wave">
+                <span class="material-symbols-outlined">done</span>
+                <span>Confirm</span>
+            </div>
+            <div class="btn red wave">
+                <span class="material-symbols-outlined">close</span>
+                <span>Remove</span>
+            </div>
         </section>
     </section>
     <section class="demo-columns dark">
         <section class="column">
             <h1>Courseware</h1>
-            <div class="btn blue original">Option</div>
-            <div class="btn green original">Confirm</div>
-            <div class="btn red original">Delete</div>
+            <div class="btn blue courseware">
+                <span class="material-symbols-outlined">search</span>
+                <span>Action</span>
+            </div>
+            <div class="btn green courseware">
+                <span class="material-symbols-outlined">done</span>
+                <span>Confirm</span>
+            </div>
+            <div class="btn red courseware">
+                <span class="material-symbols-outlined">close</span>
+                <span>Remove</span>
+            </div>
         </section>
         <section class="column">
-            <h1>Muted</h1>
-            <div class="btn blue"></div>
-            <div class="btn green"></div>
-            <div class="btn red"></div>
+            <h1>Standard</h1>
+            <div class="btn blue standard">
+                <span class="material-symbols-outlined">search</span>
+                <span>Action</span>
+            </div>
+            <div class="btn green standard">
+                <span class="material-symbols-outlined">done</span>
+                <span>Confirm</span>
+            </div>
+            <div class="btn red standard">
+                <span class="material-symbols-outlined">close</span>
+                <span>Remove</span>
+            </div>
         </section>
         <section class="column">
             <h1>Flood</h1>
-            <div class="btn blue"></div>
-            <div class="btn green"></div>
-            <div class="btn red"></div>
+            <div class="btn blue flood">
+                <span class="material-symbols-outlined">search</span>
+                <span>Action</span>
+            </div>
+            <div class="btn green flood">
+                <span class="material-symbols-outlined">done</span>
+                <span>Confirm</span>
+            </div>
+            <div class="btn red flood">
+                <span class="material-symbols-outlined">close</span>
+                <span>Remove</span>
+            </div>
         </section>
         <section class="column">
             <h1>Wave</h1>
-            <div class="btn blue"></div>
-            <div class="btn green"></div>
-            <div class="btn red"></div>
+            <div class="btn blue wave">
+                <span class="material-symbols-outlined">search</span>
+                <span>Action</span>
+            </div>
+            <div class="btn green wave">
+                <span class="material-symbols-outlined">done</span>
+                <span>Confirm</span>
+            </div>
+            <div class="btn red wave">
+                <span class="material-symbols-outlined">close</span>
+                <span>Remove</span>
+            </div>
         </section>
     </section>
   </body>
 
   <script type="text/javascript" src="buttons.js"></script>
   <script type="text/javascript">
-    const original = Array.from(document.getElementsByClassName('original'));
-    original.forEach(elem => new BC(elem));
-    const floodBtn = document.getElementById('flood');
+    Array.from(document.getElementsByClassName('courseware')).forEach(elem => new CoursewareButton(elem));
+    Array.from(document.getElementsByClassName('standard')).forEach(elem => new StandardButton(elem));
   </script>
 </html>
