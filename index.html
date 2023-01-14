@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Buttons Demo</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+  <body>
+    <section class="demo-columns">
+        <section class="column">
+            <h1>Courseware</h1>
+            <div class="btn blue original">Option</div>
+            <div class="btn green original">Confirm</div>
+            <div class="btn red original">Delete</div>
+        </section>
+        <section class="column">
+            <h1>Muted</h1>
+            <div class="btn blue"></div>
+            <div class="btn green"></div>
+            <div class="btn red"></div>
+        </section>
+        <section class="column">
+            <h1>Flood</h1>
+            <div class="btn blue"></div>
+            <div class="btn green"></div>
+            <div class="btn red"></div>
+        </section>
+        <section class="column">
+            <h1>Wave</h1>
+            <div class="btn blue"></div>
+            <div class="btn green"></div>
+            <div class="btn red"></div>
+        </section>
+    </section>
+    <section class="demo-columns dark">
+        <section class="column">
+            <h1>Courseware</h1>
+            <div class="btn blue original">Option</div>
+            <div class="btn green original">Confirm</div>
+            <div class="btn red original">Delete</div>
+        </section>
+        <section class="column">
+            <h1>Muted</h1>
+            <div class="btn blue"></div>
+            <div class="btn green"></div>
+            <div class="btn red"></div>
+        </section>
+        <section class="column">
+            <h1>Flood</h1>
+            <div class="btn blue"></div>
+            <div class="btn green"></div>
+            <div class="btn red"></div>
+        </section>
+        <section class="column">
+            <h1>Wave</h1>
+            <div class="btn blue"></div>
+            <div class="btn green"></div>
+            <div class="btn red"></div>
+        </section>
+    </section>
+  </body>
+
+  <script type="text/javascript" src="buttons.js"></script>
+  <script type="text/javascript">
+    const original = Array.from(document.getElementsByClassName('original'));
+    original.forEach(elem => new BC(elem));
+    const floodBtn = document.getElementById('flood');
+  </script>
+</html>

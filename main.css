@@ -28,7 +28,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-    background-color: #000;
+    background-color: rgb(238, 238, 238);
 }
 ol, ul {
 	list-style: none;
@@ -52,3 +52,104 @@ table {
 /* -----------------------------
 # General
 ----------------------------- */
+
+@font-face {
+    font-family: Montserrat;
+    src: url('fonts/Montserrat-VariableFont_wght.ttf') format("truetype-variations");
+}
+
+:root {
+    --white: #FFFFFF;
+    --grey: #444444;
+    --blue: #007bff;
+    --green: #218838;
+    --red: #c82333;
+    --bc-blue: #034783;
+    --bc-light-blue: #2edeeb;
+    --bc-dark-blue: #021E33;
+    --bc-orange: #CF7B12;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Montserrat';
+    display: flex;
+    flex-direction: column;
+}
+
+.demo-columns {
+    box-sizing: border-box;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 40px;
+    row-gap: 40px;
+}
+
+.demo-columns.dark {
+    background-color: var(--bc-dark-blue);
+}
+
+.demo-columns .column {
+    min-width: calc(25%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+    font-size: 20px;
+}
+
+.demo-columns .column h1 {
+    font-size: 32px;
+    text-align: center;
+    text-transform: lowercase;
+    font-variant: small-caps;
+    color: rgba(0,0,0,0.3);
+    padding-bottom: 4px;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+}
+
+.demo-columns.dark .column h1 {
+    color: rgba(255,255,255,0.4);
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+}
+
+.btn {
+    box-sizing: border-box;
+    width: 200px;
+    height: 50px;
+    border-radius: 4px;
+    background-color: var(--grey);
+    color: var(--white);
+    border: 3px solid transparent;
+    line-height: 44px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn.blue {
+    background-color: var(--bc-blue);
+}
+.btn.green {
+    background-color: var(--green);
+}
+.btn.red {
+    background-color: var(--red);
+}
+
+.btn.blue.original {
+    background-color: var(--bc-blue);
+    transition: 300ms border-color ease-in-out;
+}
+
+.btn.blue.original:hover {
+    border-color: var(--bc-light-blue);
+}
+
+.btn.blue.original.selected {
+    border-color: var(--bc-orange);
+}
