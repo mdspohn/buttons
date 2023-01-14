@@ -8,10 +8,7 @@
   </head>
   <body>
     <div id="siarra-mode">
-            <span class="material-symbols-outlined">visibility</span>
-        <marquee>
-            <span>Siarra Mode</span>
-        </marquee>
+        <span class="text"><span class="material-symbols-outlined">visibility</span> Siarra Mode</span>
    </div>
     <section class="demo-columns">
         <section class="column">
@@ -45,27 +42,6 @@
             </div>
         </section>
         <section class="column">
-            <h1>Flood</h1>
-            <div class="btn blue flood">
-                <div class="absolute-wrapper">
-                    <span class="material-symbols-outlined">apps</span>
-                    <span>General</span>
-                </div>
-            </div>
-            <div class="btn green flood">
-                <div class="absolute-wrapper">
-                    <span class="material-symbols-outlined">done</span>
-                    <span>Confirm</span>
-                </div>
-            </div>
-            <div class="btn red flood">
-                <div class="absolute-wrapper">
-                    <span class="material-symbols-outlined">close</span>
-                    <span>Remove</span>
-                </div>
-            </div>
-        </section>
-        <section class="column">
             <h1>Wave</h1>
             <div class="btn blue wave">
                 <div class="absolute-wrapper">
@@ -80,6 +56,27 @@
                 </div>
             </div>
             <div class="btn red wave">
+                <div class="absolute-wrapper">
+                    <span class="material-symbols-outlined">close</span>
+                    <span>Remove</span>
+                </div>
+            </div>
+        </section>
+        <section class="column">
+            <h1>Shine</h1>
+            <div class="btn blue shine">
+                <div class="absolute-wrapper">
+                    <span class="material-symbols-outlined">apps</span>
+                    <span>General</span>
+                </div>
+            </div>
+            <div class="btn green shine">
+                <div class="absolute-wrapper">
+                    <span class="material-symbols-outlined">done</span>
+                    <span>Confirm</span>
+                </div>
+            </div>
+            <div class="btn red shine">
                 <div class="absolute-wrapper">
                     <span class="material-symbols-outlined">close</span>
                     <span>Remove</span>
@@ -119,27 +116,6 @@
             </div>
         </section>
         <section class="column">
-            <h1>Flood</h1>
-            <div class="btn blue flood">
-                <div class="absolute-wrapper">
-                    <span class="material-symbols-outlined">apps</span>
-                    <span>General</span>
-                </div>
-            </div>
-            <div class="btn green flood">
-                <div class="absolute-wrapper">
-                    <span class="material-symbols-outlined">done</span>
-                    <span>Confirm</span>
-                </div>
-            </div>
-            <div class="btn red flood">
-                <div class="absolute-wrapper">
-                    <span class="material-symbols-outlined">close</span>
-                    <span>Remove</span>
-                </div>
-            </div>
-        </section>
-        <section class="column">
             <h1>Wave</h1>
             <div class="btn blue wave">
                 <div class="absolute-wrapper">
@@ -160,6 +136,27 @@
                 </div>
             </div>
         </section>
+        <section class="column">
+            <h1>Shine</h1>
+            <div class="btn blue shine">
+                <div class="absolute-wrapper">
+                    <span class="material-symbols-outlined">apps</span>
+                    <span>General</span>
+                </div>
+            </div>
+            <div class="btn green shine">
+                <div class="absolute-wrapper">
+                    <span class="material-symbols-outlined">done</span>
+                    <span>Confirm</span>
+                </div>
+            </div>
+            <div class="btn red shine">
+                <div class="absolute-wrapper">
+                    <span class="material-symbols-outlined">close</span>
+                    <span>Remove</span>
+                </div>
+            </div>
+        </section>
     </section>
   </body>
 
@@ -173,7 +170,7 @@
     });
     Array.from(document.getElementsByClassName('courseware')).forEach(elem => new CoursewareButton(elem));
     Array.from(document.getElementsByClassName('standard')).forEach(elem => new StandardButton(elem));
-    Array.from(document.getElementsByClassName('flood')).forEach(elem => new FloodButton(elem));
     Array.from(document.getElementsByClassName('wave')).forEach(elem => new WaveButton(elem));
+    Array.from(document.getElementsByClassName('shine')).forEach(elem => new ShineButton(elem));
   </script>
 </html>

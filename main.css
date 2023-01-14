@@ -117,18 +117,39 @@ body {
     position: absolute;
     top: 20px;
     right: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
     padding: 10px 20px;
     background-color: rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: background-color 300ms ease-in-out, transform 300ms ease-in-out;
+    overflow: hidden;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(-150%) rotate(-180deg);
+        color: yellow;
+        font-weight: bold;
+    }
+    100% {
+        transform: translateX(150%) rotate(180deg);
+        color: yellow;
+        font-weight: bold;
+    }
 }
 
 body:not(.migraine-mode) #siarra-mode:hover, body.migraine-mode #siarra-mode {
     transform: rotate(5deg);
+}
+
+#siarra-mode .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+body.migraine-mode #siarra-mode .text {
+    animation: marquee 2s linear infinite;
 }
 
 .demo-columns {
@@ -307,15 +328,11 @@ body.migraine-mode .demo-columns.dark {
     border-radius: 4px;
 }
 
-.btn-flood > div, .btn-flood > div > span {
-    pointer-events: none;
-}
-
 /* ----------------
-// Flood Button
+// Wave Button
 ---------------------- */
 
-.btn.flood {
+.btn.wave {
     border: 0;
     box-sizing: content-box;
     width: 180px !important;
@@ -323,7 +340,45 @@ body.migraine-mode .demo-columns.dark {
     overflow: hidden;
 }
 
-
 /* ----------------
-// Wave Button
+// Shine Button
 ---------------------- */
+
+.btn.shine {
+    position: relative;
+    border: 0;
+    box-sizing: content-box;
+    width: 180px !important;
+    height: 50px !important;
+    overflow: hidden;
+}
+  
+.btn.shine::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    width: 60px;
+    height: 100%;
+    top: 0;
+    filter: blur(30px);
+    transform: translateX(-200px) skewX(-15deg);
+}
+
+.btn.shine::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    width: 30px;
+    height: 100%;
+    top: 0;
+    filter: blur(5px);
+    transform: translateX(-200px) skewX(-15deg);
+}
+
+.btn.shine.selected::before,
+.btn.shine.selected::after {
+    transform: translateX(300px) skewX(-15deg);
+    transition: 700ms;
+}
